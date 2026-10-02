@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+/* Steller Journeys brand: charcoal #333 + signature orange #f57c00 / #e64a19 / #ffb74d */
+@theme {
+  --color-ink: #09090b;
+  --color-coal: #111114;
+  --color-panel: #17171b;
+  --color-panel-2: #1e1e23;
+  --color-line: rgba(255, 255, 255, 0.09);
+  --color-cream: #f6f1ea;
+  --color-mute: #a39d95;
+  --color-amber: #ffb74d;
+  --color-brand: #f57c00;
+  --color-ember: #e64a19;
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Lato", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-ink);
+  color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+.gold-text {
+  background: linear-gradient(100deg, #ffd08a 0%, #ffb74d 35%, #f57c00 75%, #e64a19 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(100deg, #ffb74d 0%, #f57c00 55%, #e64a19 100%);
+  color: #1a0f00;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.95rem 1.7rem;
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+  box-shadow: 0 10px 30px -10px rgba(245, 124, 0, 0.55);
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 36px -10px rgba(245, 124, 0, 0.7);
+}
+.btn-gold:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 183, 77, 0.55);
+  color: var(--color-amber);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.6rem;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-ghost:hover {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+  color: #1a0f00;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.card {
+  background: linear-gradient(180deg, var(--color-panel) 0%, var(--color-coal) 100%);
+  border: 1px solid var(--color-line);
+}
+
+.field {
+  width: 100%;
+  background: var(--color-coal);
+  border: 1px solid var(--color-line);
+  color: var(--color-cream);
+  padding: 0.8rem 0.95rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field:focus {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px rgba(245, 124, 0, 0.18);
+}
+.field option {
+  background: #17171b;
+}
+.label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-mute);
+  margin-bottom: 0.45rem;
+}
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 124, 0, 0.6), transparent);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+.rise { animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.rise-2 { animation-delay: 0.15s; }
+.rise-3 { animation-delay: 0.3s; }
+
+/* slim dark scrollbars */
+* { scrollbar-width: thin; scrollbar-color: #3a3a40 transparent; }
